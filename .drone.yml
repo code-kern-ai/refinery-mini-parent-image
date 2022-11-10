@@ -20,11 +20,11 @@ steps:
         from_secret: docker_username
       password:
         from_secret: docker_password
-      repo: "registry.dev.onetask.ai/refinery-parent-images"
+      repo: "registry.dev.onetask.ai/code-kern-ai/refinery-parent-images"
       tags: ["${DRONE_COMMIT_SHA}-mini", "${DRONE_COMMIT_BRANCH}-mini"]
       cache_from:
-        - "registry.dev.onetask.ai/refinery-parent-images:dev-mini"
-        - "registry.dev.onetask.ai/refinery-parent-images:${DRONE_COMMIT_BRANCH}-mini"
+        - "registry.dev.onetask.ai/code-kern-ai/refinery-parent-images:dev-mini"
+        - "registry.dev.onetask.ai/code-kern-ai/refinery-parent-images:${DRONE_COMMIT_BRANCH}-mini"
 
 trigger:
   event:
@@ -53,11 +53,11 @@ steps:
         from_secret: docker_username
       password:
         from_secret: docker_password
-      repo: "registry.dev.onetask.ai/refinery-parent-images"
+      repo: "registry.dev.onetask.ai/code-kern-ai/refinery-parent-images"
       tags: ["${DRONE_COMMIT_SHA}-mini-arm64", "${DRONE_COMMIT_BRANCH}-mini-arm64"]
       cache_from:
-        - "registry.dev.onetask.ai/refinery-parent-images:dev-mini-arm64"
-        - "registry.dev.onetask.ai/refinery-parent-images:${DRONE_COMMIT_BRANCH}-mini-arm64"
+        - "registry.dev.onetask.ai/code-kern-ai/refinery-parent-images:dev-mini-arm64"
+        - "registry.dev.onetask.ai/code-kern-ai/refinery-parent-images:${DRONE_COMMIT_BRANCH}-mini-arm64"
 
 trigger:
   branch:
