@@ -8,7 +8,7 @@ ENV PYTHONUNBUFFERED=1
 ENV VENV_PATH=/opt/venv
 ENV PATH="${VENV_PATH}/bin:${PATH}"
 
-RUN python -m venv "${VENV_PATH}"
+RUN python -m venv --copies "${VENV_PATH}"
 
 COPY submodules/parent-images/requirements/mini-requirements.txt .
 
