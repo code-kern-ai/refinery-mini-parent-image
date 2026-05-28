@@ -70,7 +70,7 @@ steps:
       repo: "registry.dev.kern.ai/code-kern-ai/refinery-parent-images"
       tags: ["${DRONE_COMMIT_SHA}-mini-arm64", "${DRONE_COMMIT_BRANCH}-mini-arm64"]
       cache_from:
-        - "registry.dev.kern.ai/code-kern-ai/refinery-parent-images:dev-next-arm64"
+        - "registry.dev.kern.ai/code-kern-ai/refinery-parent-images:dev-mini-arm64"
         - "registry.dev.kern.ai/code-kern-ai/refinery-parent-images:${DRONE_COMMIT_BRANCH}-mini-arm64"
 
 trigger:
