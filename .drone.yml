@@ -14,6 +14,8 @@ steps:
       - "git submodule update --recursive"
   - name: build and publish
     image: plugins/docker:21
+    environment:
+      BUILDX_NO_DEFAULT_ATTESTATIONS: "1"
     settings:
       platform: linux/amd64
       registry: registry.dev.kern.ai
@@ -53,6 +55,8 @@ steps:
       - "git submodule update --recursive"
   - name: build and publish
     image: plugins/docker:21
+    environment:
+      BUILDX_NO_DEFAULT_ATTESTATIONS: "1"
     settings:
       platform: linux/arm64
       registry: registry.dev.kern.ai
@@ -94,6 +98,8 @@ steps:
       - "git submodule update --recursive"
   - name: build and publish
     image: plugins/docker:21
+    environment:
+      BUILDX_NO_DEFAULT_ATTESTATIONS: "1"
     settings:
       platform: linux/amd64
       username:
@@ -128,7 +134,9 @@ steps:
       - 'git config --global url."https://github.com/".insteadOf git@github.com:'
       - "git submodule update --recursive"
   - name: build and publish
-    image: plugins/docker:21.2.8-linux-arm64
+    image: plugins/docker:21
+    environment:
+      BUILDX_NO_DEFAULT_ATTESTATIONS: "1"
     depends_on:
       - submodules
     settings:
@@ -154,7 +162,7 @@ kind: pipeline
 name: manifest
 steps:
   - name: manifest
-    image: plugins/manifest:1.4.0
+    image: plugins/manifest
     settings:
       spec: manifest.tmpl
       username:
